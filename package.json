@@ -70,7 +70,7 @@
     "*.js": "eslint --fix"
   },
   "dependencies": {
-    "docsify": "^4.13.0",
+    "docsify": "^4.13.1",
     "marked": "^1.2.9",
     "medium-zoom": "^1.0.6",
     "opencollective-postinstall": "^2.0.2",
