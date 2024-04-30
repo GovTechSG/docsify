@@ -22,8 +22,10 @@
   </head>
 
   <body>
-    <div id="app"></div>
-    <script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1/index.min.js"></script>
+    <div class="doc-wrapper">
+      <div id="app"></div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1"></script>
     <script>
       // Set html "lang" attribute based on URL
       var lang = location.hash.match(/#\/(de-de|es|ru-ru|zh-cn)\//);
@@ -59,6 +61,7 @@
         maxLevel: 4,
         subMaxLevel: 2,
         name: 'docsify',
+        routerMode: 'history',
         nameLink: {
           '/es/': '#/es/',
           '/de-de/': '#/de-de/',
@@ -82,12 +85,12 @@
             '/zh-cn/': '搜索',
             '/': 'Search',
           },
-          pathNamespaces: ['/es', '/de-de', '/ru-ru', '/zh-cn']
+          pathNamespaces: ['/es', '/de-de', '/ru-ru', '/zh-cn'],
         },
         plugins: [
           DocsifyCarbon.create('CEBI6KQE', 'docsifyjsorg'),
-          function(hook, vm) {
-            hook.beforeEach(function(html) {
+          function (hook, vm) {
+            hook.beforeEach(function (html) {
               if (/githubusercontent\.com/.test(vm.route.file)) {
                 url = vm.route.file
                   .replace('raw.githubusercontent.com', 'github.com')
@@ -106,7 +109,8 @@
                 editHtml +
                 html +
                 '\n\n----\n\n' +
-                '<a href="https://docsify.js.org" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by docsify</a>'
+                '<a href="https://docsify.js.org" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by docsify</a>\n\n' +
+                '<a href="https://vercel.com/?utm_source=docsifyjs&utm_campaign=oss" target="_blank" title="Vercel has given us a Pro account"><img src="/docs/_media/powered-by-vercel.svg" alt="Vercel" width="150"></a>'
               );
             });
           },
@@ -115,7 +119,6 @@
     </script>
     <script src="/lib/docsify.js"></script>
     <script src="/lib/plugins/search.js"></script>
-    <script src="/lib/plugins/emoji.js"></script>
     <script src="/lib/plugins/front-matter.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
