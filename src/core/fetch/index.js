@@ -67,7 +67,8 @@ export function Fetch(Base) {
   return class Fetch extends Base {
     _loadSideAndNav(path, qs, loadSidebar, cb) {
       return () => {
-        if (!loadSidebar) {
+        const hideSidebar = this.config.hideSidebar;
+        if (hideSidebar || !loadSidebar) {
           return cb();
         }
 
