@@ -50,18 +50,6 @@ export function main(config) {
       : '') +
     '<div class="sidebar-nav"><!--sidebar--></div>' +
     '</aside>';
-
-  const hideSidebar = config.hideSidebar;
-  if (hideSidebar) {
-    return (
-      `<main>` +
-      '<section class="content">' +
-      '<section class="content-without-sidebar" style="padding-top: 122px">' +
-      '</section>' +
-      '</main>'
-    );
-  }
-
   return (
     `<main>${aside}` +
     '<section class="content">' +
